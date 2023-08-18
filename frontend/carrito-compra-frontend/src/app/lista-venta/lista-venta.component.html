@@ -1,0 +1,24 @@
+<div class="container mt-4" >
+    <h1>Lista de Ventas</h1>
+    <hr flex/>
+  <table  datatable  id="tableventa" class="table">
+    <thead>    
+    <tr>
+        <th scope="col">Cliente</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Total</th>  
+        <th scope="col">Ver Detalle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let venta of VentatArray">
+        <td>{{venta.cliente }}</td>
+        <td>{{venta.fecha }}</td>
+        <td>{{venta.total }}</td>
+        <td> 
+          <button type="button" class="btn btn-success" >Ver Detalle</button>           
+        </td>
+      </tr>          
+    </tbody>
+  </table>
+  </div>
