@@ -11,15 +11,13 @@ import { Router} from '@angular/router';
 export class ListaVentaComponent implements OnInit{
 
   VentatArray : any[] = [];
-  isResultLoaded = false;
-  isUpdateFormActive = false;
   cliente: string ="";
   fecha: string ="";
   total: string ="";
 
   constructor(private http: HttpClient, private router:Router ) 
   {
-    this.getAllStudent();
+    this.getAllVenta();
   }
 
   ngOnInit(): void {
@@ -28,14 +26,13 @@ export class ListaVentaComponent implements OnInit{
 
 
 
-  public getAllStudent()
+  public getAllVenta()
   { 
     this.http.get("http://localhost:8085/api/v1/ventas")
     .subscribe((resultData: any)=>
     {
-        this.isResultLoaded = true;
         //console.log(resultData.data);
-        this.VentatArray = resultData.data;
+        this.VentatArray = resultData;
     });
   }
 
